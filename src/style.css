@@ -34,7 +34,6 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 800px;
   width: 1200px;
   max-width: 1200px;
   padding: 1rem;
@@ -43,7 +42,6 @@ body {
 .main--hijo {
   display: flex;
   width: 500px;
-  height: 500px;
   border-radius: 50%;
   place-items: center;
   justify-content: center;
@@ -51,6 +49,7 @@ body {
   padding: 1rem;
   overflow: hidden;
   position: relative;
+  aspect-ratio: 1/1;
 }
 
 .main--hijo .foto {
@@ -115,6 +114,14 @@ body {
   .main--hijo {
     width: 350px;
   }
+
+  .main--hijo .foto {
+    width: 400px;
+  }
+
+  .main--hijo:hover .foto {
+    width: 420px;
+  }
 }
 
 
@@ -129,6 +136,14 @@ body {
   .main--hijo {
     width: 400px;
   }
+
+  .main--hijo .foto {
+    width: 400px;
+  }
+
+  .main--hijo:hover .foto {
+    width: 420px;
+  }
 }
 
 @media (width < 440px) {
@@ -142,5 +157,6 @@ body {
   .main--hijo {
     width: 250px;
     height: 350px;
+
   }
 }
