@@ -2,6 +2,12 @@
   --fondoPrimario: #0E0E0E;
   --colorSecundario: #403963;
   --colorTerciario: #D41414;
+
+  /** Transiciones **/
+  --velocidad-lenta: 1s ease;
+  --velocidad-normal: 0.7s ease;
+  --velocidad-rapida: 0.5s ease;
+
 }
 
 * {
@@ -38,19 +44,59 @@ body {
   display: flex;
   width: 500px;
   height: 500px;
-  border: 1px solid blue;
+  border-radius: 50%;
   place-items: center;
   justify-content: center;
   text-align: center;
   padding: 1rem;
+  overflow: hidden;
+  position: relative;
 }
 
-.micara {
-  background-color: var(--colorSecundario);
-  background-image: url('./assets/mortalshell2.jpg');
-  background-position: center;
-  transition: all 0.7s ease;
+.main--hijo .foto {
+  width: 500px;
+  object-fit: cover;
+  transition: opacity var(--velocidad-normal);
+  transition: width var(--velocidad-normal);
+  z-index: 0;
 }
+
+
+.fade {
+  opacity:0.5;
+  background-color: black;
+  width: 500px;
+  height: 100%;
+  z-index: 2;
+  position: absolute;
+  transition: opacity var(--velocidad-normal);
+}
+
+
+.main--hijo:hover .fade {
+  opacity: 0;
+}
+
+.main--hijo .foto-hover {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  object-position: center 20%;
+  z-index: 1;
+}
+
+.main--hijo:hover .foto {
+  width: 550px;
+}
+
+.main--hijo:hover .foto-normal {
+  opacity: 0;
+}
+
+.main--hijo:hover .foto-hover {
+  opacity: 1;
+}
+
 
 
 .midescripcion {
