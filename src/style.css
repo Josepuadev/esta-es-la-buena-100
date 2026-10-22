@@ -39,7 +39,7 @@ body {
   padding: 1rem;
 }
 
-.main--hijo {
+.main--card {
   display: flex;
   width: 500px;
   border-radius: 50%;
@@ -52,10 +52,9 @@ body {
   aspect-ratio: 1/1;
 }
 
-.main--hijo .foto {
+.wrapper--fotos .foto {
   width: 500px;
   object-fit: cover;
-  transition: opacity var(--velocidad-normal);
   transition: width var(--velocidad-normal);
   z-index: 0;
 }
@@ -72,11 +71,11 @@ body {
 }
 
 
-.main--hijo:hover .fade {
+.wrapper--fotos:hover .fade {
   opacity: 0;
 }
 
-.main--hijo .foto-hover {
+.wrapper--fotos .foto-hover {
   position: absolute;
   inset: 0;
   opacity: 0;
@@ -84,23 +83,34 @@ body {
   z-index: 1;
 }
 
-.main--hijo:hover .foto {
+.wrapper--fotos:hover .foto {
   width: 550px;
 }
 
-.main--hijo:hover .foto-normal {
+.wrapper--fotos:hover .foto-normal {
   opacity: 0;
 }
 
-.main--hijo:hover .foto-hover {
+.wrapper--fotos:hover .foto-hover {
   opacity: 1;
 }
 
 
 
-.midescripcion {
-  background-color: var(--colorTerciario);
-  transition: all 0.7s ease;
+.wrapper--descripcion {
+  background-color: red;
+  position: relative;
+}
+
+.wrapper--descripcion > div:nth-of-type(1) {
+  position: absolute;
+  background-color: blue;
+}
+
+.wrapper--descripcion > div:nth-of-type(2) {
+  position: absolute;
+  background-color: aqua;
+  opacity: 0;
 }
 
 
